@@ -49,6 +49,10 @@ const onSearchFormSubmit = async event => {
 
   pixabayApi.page = 1;
   let searchValue = event.target.elements.searchQuery.value.trim();
+  if (!searchValue) {
+    return;
+  }
+
   pixabayApi.q = searchValue;
 
   try {
